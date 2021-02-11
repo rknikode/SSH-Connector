@@ -1,0 +1,223 @@
+html,
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #eeeded;
+  height: 100%;
+  width: 100%;
+  overflow-x:hidden;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+
+.host_status {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.host_status_online {
+    background: #81e881;
+}
+
+.host_status_offline {
+    background: #fd6060;
+}
+
+/*
+ *  STYLE 2
+ */
+
+.content {
+    height: 500px;
+    overflow: auto;
+}
+
+.content::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+ 
+.content::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+ 
+.content::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgb(175, 204, 241);
+}
+
+/* .container {
+    margin-top: 20px;
+} */
+
+.container-fluid {
+    margin-top: 50px;
+}
+
+/* switch to pens style */
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: #a5dc86;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+	max-width: 600px;
+	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	font-weight: normal;
+	line-height: 1.625;
+	margin: 8px auto;
+	padding: 16px;
+}
+
+h2 {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.card-item {
+    background-color: #eeeded;
+    cursor: pointer;
+}
+
+.main-panel {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 5px;
+}
+
+.card-header {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-item:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-item:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+}
+
+#update {
+    padding: 5px 20px 5px 20px;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#toast {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+  
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#toast.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+ 
+/* .opp_button {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    z-index: 1111;
+    transition: opacity .35s ease;
+}
+
+.card-item:hover .opp_button {
+    opacity: 1; 
+}*/

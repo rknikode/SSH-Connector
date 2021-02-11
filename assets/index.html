@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./css/dashboard.css"> -->
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <title>SSH Worker</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="card main-panel">
+                    <div class="card-header text-center">Host</div>
+                    <div class="card-body content">
+                        <!-- fill trough loop -->
+                    </div>
+                    <div class="card-footer text-center">
+                        <input type="button" id="open_add_host" value="Add Host" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="card main-panel">
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="form-group text-center">
+                                <div class="switch-field">
+                                    <input type="radio" id="radio-one" name="switch-one" value="maintain_current" checked/>
+                                    <label for="radio-one">Maintain Current</label>
+                                    <input type="radio" id="radio-two" name="switch-one" value="delete_existing" />
+                                    <label for="radio-two">Delete Existing</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-3 offset-sm-3">
+                                    <div class="form-group">
+                                        <!-- <label for="hostname">Hostname</label> -->
+                                        <input type="text" id="hostname" class="form-control" placeholder="Hostname">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <!-- <label for="host">Host</label> -->
+                                        <input type="text" id="host" class="form-control" placeholder="Host">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <!-- <label for="port">Port</label> -->
+                                        <input type="text" id="port" class="form-control" placeholder="Port">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <!-- <label for="username">Username</label> -->
+                                        <input type="text" id="username" class="form-control" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <!-- <label for="password">Password</label> -->
+                                        <input type="password" id="password" class="form-control" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-3 offset-sm-3">
+                                    <div class="form-group text-center">
+                                        <!-- <label for="hostname">Hostname</label> -->
+                                        <input type="button" id="update" class="btn btn-success" value="Update">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast"></div>
+      
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Host</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form class="form" name="addForm">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-3 offset-sm-3">
+                            <div class="form-group">
+                                <input type="text" id="add_hostname" class="form-control" placeholder="Hostname">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="add_hostval" class="form-control" placeholder="Host">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="add_port" class="form-control" placeholder="Port">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="add_username" class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="password" id="add_password" class="form-control" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+            
+                </form>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                <input type="button" id="add_host" value="Save" class="btn btn-success">
+            </div>
+      
+          </div>
+        </div>
+      </div>
+</body>
+<script src="./js/preload.js"></script>
+<script src="./js/custom.js"></script>
+<!-- <script src="./js/ssh2.js"></script> -->
+</html>

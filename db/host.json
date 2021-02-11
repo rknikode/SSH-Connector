@@ -1,0 +1,39 @@
+{
+  "host": [
+    {
+      "hostname": "Host 1",
+      "host": "192.168.2.1",
+      "port": "22",
+      "username": "rakesh",
+      "password": "RKnikumbh12345",
+      "status": "offline",
+      "last_archive": null,
+      "deleted_at": null,
+      "id": 1573407314151
+    },
+    {
+      "hostname": "Host 2",
+      "host": "192.168.2.111",
+      "port": "22",
+      "username": "jainam",
+      "password": "jainam12345",
+      "status": "offline",
+      "last_archive": null,
+      "deleted_at": null,
+      "id": 1573407591213
+    },
+    {
+      "hostname": "Host 3",
+      "host": "192.168.2.7",
+      "port": "25",
+      "username": "dean",
+      "password": "dean123",
+      "status": "offline",
+      "last_archive": null,
+      "created_at": "11-10-2019 23:11:55",
+      "updated_at": null,
+      "deleted_at": null,
+      "id": 1573409033586
+    }
+  ]
+}
